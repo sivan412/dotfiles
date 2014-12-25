@@ -1,12 +1,14 @@
 " Douglas Black
 " Colors {{{
 syntax enable           " enable syntax processing
-"colorscheme badwolf
+colorscheme molokai 
 " }}}
 
 " Misc {{{
 set ttyfast                     " faster redraw
 set backspace=indent,eol,start
+set history=700
+set undolevels=700
 " }}}
 
 " Spaces & Tabs {{{
@@ -43,11 +45,11 @@ set hlsearch            " highlight all matches
 
 " Folding {{{
 "=== folding ===
-set foldmethod=indent   " fold based on indent level
-set foldnestmax=10      " max 10 depth
-set foldenable          " don't fold files by default on open
-nnoremap <space> za
-set foldlevelstart=10    " start with fold level of 1
+"set foldmethod=indent   " fold based on indent level
+"set foldnestmax=10      " max 10 depth
+"set foldenable          " don't fold files by default on open
+"nnoremap <space> za
+"set foldlevelstart=10    " start with fold level of 1
 " }}}
 
 " Line Shortcuts {{{
@@ -87,12 +89,6 @@ set encoding=utf-8
 python from powerline.vim import setup as powerline_setup
 python powerline_setup()
 python del powerline_setup
-let g:airline#extensions#tabline#left_sep = ' '
-let g:airline#extensions#tabline#left_alt_sep = '|'
-let g:airline_left_sep = ''
-let g:airline_left_alt_sep = ''
-let g:airline_right_sep = ''
-let g:airline_right_alt_sep = ''
 set laststatus=2
 set t_Co=256
 " }}}
@@ -139,11 +135,18 @@ set writebackup
 " }}}
 
 "Jedi Vim {{{
-let g:jedi#usages_command = "<leader>z"
-let g:jedi#popup_on_dot = 0
-let g:jedi#popup_select_first = 0
-map <Leader>b Oimport ipdb; ipdb.set_trace() # BREAKPOINT<C-c>
+"let g:jedi#usages_command = "<leader>z"
+"let g:jedi#popup_on_dot = 0
+"let g:jedi#popup_select_first = 0
+"map <Leader>b Oimport ipdb; ipdb.set_trace() # BREAKPOINT<C-c>
 "}}}
 "
+"
+" Youcompleteme {{{
 let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_autoclose_preview_window_after_insertion = 1
+" }}}
+"
+"Python-mode {{{
+let g:pymode_rope_complete_on_dot = 0
+"}}}
